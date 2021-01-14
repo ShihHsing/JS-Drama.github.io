@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git 使用心得 &amp; 常见问题整理 | JS-Drama</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <meta name="description" content="JS-Drama的前端记录">
+    
+    <link rel="preload" href="/assets/css/0.styles.76891a63.css" as="style"><link rel="preload" href="/assets/js/app.9454abc9.js" as="script"><link rel="preload" href="/assets/js/2.62a85667.js" as="script"><link rel="preload" href="/assets/js/9.5830ce87.js" as="script"><link rel="prefetch" href="/assets/js/10.26880948.js"><link rel="prefetch" href="/assets/js/11.4f7dc882.js"><link rel="prefetch" href="/assets/js/12.5477dcee.js"><link rel="prefetch" href="/assets/js/13.26988e73.js"><link rel="prefetch" href="/assets/js/14.8cda783c.js"><link rel="prefetch" href="/assets/js/15.bc5c35ae.js"><link rel="prefetch" href="/assets/js/16.f525dab1.js"><link rel="prefetch" href="/assets/js/3.607988fe.js"><link rel="prefetch" href="/assets/js/4.8496522d.js"><link rel="prefetch" href="/assets/js/5.88d07b8b.js"><link rel="prefetch" href="/assets/js/6.c671543d.js"><link rel="prefetch" href="/assets/js/7.6958cc2c.js"><link rel="prefetch" href="/assets/js/8.38abe476.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.76891a63.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/images/logo.jpg" alt="JS-Drama" class="logo"> <span class="site-name can-hide">JS-Drama</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="红宝书笔记" class="dropdown-title"><span class="title">红宝书笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="红宝书笔记" class="mobile-dropdown-title"><span class="title">红宝书笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Little-red-book-fourth/1/class-1.html" class="nav-link">
+  1. 什么是 JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Little-red-book-fourth/2/class-1.html" class="nav-link">
+  2. HTML 中的 JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Little-red-book-fourth/3/class-1.html" class="nav-link">
+  3. 语言基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具类" class="dropdown-title"><span class="title">工具类</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具类" class="mobile-dropdown-title"><span class="title">工具类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Tool/commitizen/class_1.html" class="nav-link">
+  git cz
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂类-待分类" class="dropdown-title"><span class="title">杂类-待分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂类-待分类" class="mobile-dropdown-title"><span class="title">杂类-待分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/namingThings/class_1.html" class="nav-link">
+  函数命名
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/vue+websocket/class_1.html" class="nav-link">
+  vue+websocket
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/git/class_1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  git常用命令
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/JS-Drama/JS-Drama.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="红宝书笔记" class="dropdown-title"><span class="title">红宝书笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="红宝书笔记" class="mobile-dropdown-title"><span class="title">红宝书笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Little-red-book-fourth/1/class-1.html" class="nav-link">
+  1. 什么是 JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Little-red-book-fourth/2/class-1.html" class="nav-link">
+  2. HTML 中的 JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Little-red-book-fourth/3/class-1.html" class="nav-link">
+  3. 语言基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具类" class="dropdown-title"><span class="title">工具类</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具类" class="mobile-dropdown-title"><span class="title">工具类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Tool/commitizen/class_1.html" class="nav-link">
+  git cz
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂类-待分类" class="dropdown-title"><span class="title">杂类-待分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂类-待分类" class="mobile-dropdown-title"><span class="title">杂类-待分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/namingThings/class_1.html" class="nav-link">
+  函数命名
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/vue+websocket/class_1.html" class="nav-link">
+  vue+websocket
+</a></li><li class="dropdown-item"><!----> <a href="/pages/Miscellaneous/git/class_1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  git常用命令
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/JS-Drama/JS-Drama.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Git 使用心得 &amp; 常见问题整理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/Miscellaneous/git/class_1.html#git-流程图" class="sidebar-link">Git 流程图</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/git/class_1.html#配置-git" class="sidebar-link">配置 Git</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/git/class_1.html#查看-git-信息" class="sidebar-link">查看 Git 信息</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#git-reflog" class="sidebar-link">git reflog</a></li><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#git-log-点线图" class="sidebar-link">git log 点线图</a></li></ul></li><li><a href="/pages/Miscellaneous/git/class_1.html#git-常用命令" class="sidebar-link">Git 常用命令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/Miscellaneous/git/class_1.html#git-常用命令详解" class="sidebar-link">Git 常用命令详解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#add" class="sidebar-link">add</a></li><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#status" class="sidebar-link">status</a></li><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#commit" class="sidebar-link">commit</a></li><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#push-pull" class="sidebar-link">push &amp; pull</a></li><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#branch" class="sidebar-link">branch</a></li><li class="sidebar-sub-header"><a href="/pages/Miscellaneous/git/class_1.html#merge-三种常用合并方法" class="sidebar-link">merge 三种常用合并方法</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="git-使用心得-常见问题整理"><a href="#git-使用心得-常见问题整理" class="header-anchor">#</a> Git 使用心得 &amp; 常见问题整理</h1> <h2 id="git-流程图"><a href="#git-流程图" class="header-anchor">#</a> Git 流程图</h2> <p><img src="/assets/img/172b390eab77fcbd.aefbf0ba.jpg" alt="img"></p> <ul><li><code>Workspace</code>：工作区</li> <li><code>Index / Stage</code>：暂存区</li> <li><code>Repository</code>：仓库区（或本地仓库）</li> <li><code>Remote</code>：远程仓库</li></ul> <h2 id="配置-git"><a href="#配置-git" class="header-anchor">#</a> 配置 Git</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 配置全局用户</span>
+$ <span class="token function">git</span> config --global user.name <span class="token string">&quot;用户名&quot;</span>
+$ <span class="token function">git</span> config --global user.email <span class="token string">&quot;git账号&quot;</span>
+<span class="token comment"># 配置别名</span>
+$ <span class="token function">git</span> config --global alias.co checkout
+$ <span class="token function">git</span> config --global alias.ss status
+$ <span class="token function">git</span> config --global alias.cm commit
+$ <span class="token function">git</span> config --global alias.br branch
+$ <span class="token function">git</span> config --global alias.rg reflog
+<span class="token comment"># 这里只是美化 log 的输出，实际使用时可以在 git lg 后面加命令参数，如： git lg -10 显示最近10条提交</span>
+$ <span class="token function">git</span> config --global alias.lg <span class="token string">&quot;log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit&quot;</span>
+<span class="token comment"># 删除全局配置</span>
+$ <span class="token function">git</span> config --global --unset alias.xxx
+$ <span class="token function">git</span> config --global --unset user.xxx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="查看-git-信息"><a href="#查看-git-信息" class="header-anchor">#</a> 查看 Git 信息</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看系统配置</span>
+$ <span class="token function">git</span> config --list
+<span class="token comment"># 查看用户配置</span>
+$ <span class="token function">cat</span> ~/.gitconfig
+<span class="token comment"># 查看当前项目的 git 配置</span>
+$ <span class="token function">cat</span> .git/config
+<span class="token comment"># 查看暂存区的文件</span>
+$ <span class="token function">git</span> ls-files
+<span class="token comment"># 查看本地 git 命令历史</span>
+$ <span class="token function">git</span> reflog
+<span class="token comment"># 查看所有 git 命令</span>
+$ <span class="token function">git</span> --help -a
+<span class="token comment"># 查看当前 HEAD 指向</span>
+$ <span class="token function">cat</span> .git/HEAD
+
+<span class="token comment"># git 中 D 向下翻一行  F 向下翻页  B 向上翻页  Q 退出</span>
+<span class="token comment"># 查看提交历史</span>
+$ <span class="token function">git</span> log --oneline  
+          --grep<span class="token operator">=</span><span class="token string">&quot;关键字&quot;</span>
+          --graph
+          --all
+          --author <span class="token string">&quot;username&quot;</span>
+          --reverse
+          -num
+          -p
+          --before<span class="token operator">=</span>  <span class="token number">1</span>  day/1  week/1  <span class="token string">&quot;2019-06-06&quot;</span>
+          --after<span class="token operator">=</span> <span class="token string">&quot;2019-06-06&quot;</span>
+          --stat
+          --abbrev-commit
+          --pretty<span class="token operator">=</span>format:<span class="token string">&quot;xxx&quot;</span>
+
+<span class="token comment"># oneline -&gt; 将日志记录一行一行的显示</span>
+<span class="token comment"># grep=&quot;关键字&quot; -&gt; 查找日志记录中(commit提交时的注释)与关键字有关的记录</span>
+<span class="token comment"># graph -&gt; 记录图形化显示 ！！！</span>
+<span class="token comment"># all -&gt; 将所有记录都详细的显示出来</span>
+<span class="token comment"># author &quot;username&quot; -&gt; 查找这个作者提交的记录</span>
+<span class="token comment"># reverse -&gt; commit 提交记录顺序翻转</span>
+<span class="token comment"># before -&gt; 查找规定的时间(如:1天/1周)之前的记录</span>
+<span class="token comment"># num -&gt; git log -10 显示最近10次提交 ！！！</span>
+<span class="token comment"># stat -&gt; 显示每次更新的文件修改统计信息，会列出具体文件列表 ！！！</span>
+<span class="token comment"># abbrev-commit -&gt; 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符 ！！！</span>
+<span class="token comment"># pretty=format:&quot;xxx&quot; -&gt;  可以定制要显示的记录格式 ！！！</span>
+<span class="token comment"># p -&gt; 显示每次提交所引入的差异（按 补丁 的格式输出）！！！</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h3 id="git-reflog"><a href="#git-reflog" class="header-anchor">#</a> git reflog</h3> <ul><li><strong>显示的是一个 <code>HEAD</code> 指向发生改变的时间列表</strong>。在你切换分支、用 <code>git commit</code> 进行提交、以及用 <code>git reset</code> 撤销 commit 时，<code>HEAD</code> 指向会改变，但当你进行 <code>git checkout -- &lt;filename&gt;</code> 撤销或者 <code>git stash</code>  存储文件等操作时，<code>HEAD</code> 并不会改变，这些修改从来没有被提交过，因此 <code>reflog</code> 也无法帮助我们恢复它们。</li> <li><code>git reflog</code> 不会永远保持，Git 会定期清理那些 “用不到的” 对象，不要指望几个月前的提交还一直在那里。</li></ul> <h3 id="git-log-点线图"><a href="#git-log-点线图" class="header-anchor">#</a> git log 点线图</h3> <ul><li><strong>git 中一条分支就是一个指针，新建一条分支就是基于当前指针新建一个指针</strong></li> <li><strong>切换至某个分支 ，就是将 HEAD 指向某条分支（指针）</strong></li> <li><strong>切换至某个 commit ，就是将 HEAD 指向某个 commit</strong></li></ul> <p>符号解释：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>*   表示一个 commit
+<span class="token operator">|</span>   表示分支前进
+/   表示分叉
+<span class="token punctuation">\</span>   表示合入
+<span class="token operator">|</span>/  表示新分支
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="git-常用命令"><a href="#git-常用命令" class="header-anchor">#</a> Git 常用命令</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看工作区和暂存区的状态</span>
+$ <span class="token function">git</span> status
+<span class="token comment"># 将工作区的文件提交到暂存区</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token comment"># 提交到本地仓库</span>
+$ <span class="token function">git</span> commit -m <span class="token string">&quot;本次提交说明&quot;</span>
+<span class="token comment"># add和commit的合并，便捷写法（未追踪的文件无法直接提交到暂存区/本地仓库）</span>
+$ <span class="token function">git</span> commit -am <span class="token string">&quot;本次提交说明&quot;</span>  
+<span class="token comment"># 将本地分支和远程分支进行关联</span>
+$ <span class="token function">git</span> push -u origin branchName
+<span class="token comment"># 将本地仓库的文件推送到远程分支</span>
+$ <span class="token function">git</span> push
+<span class="token comment"># 拉取远程分支的代码</span>
+$ <span class="token function">git</span> pull origin branchName
+<span class="token comment"># 合并分支</span>
+$ <span class="token function">git</span> merge branchName
+<span class="token comment"># 查看本地拥有哪些分支</span>
+$ <span class="token function">git</span> branch
+<span class="token comment"># 查看所有分支（包括远程分支和本地分支）</span>
+$ <span class="token function">git</span> branch -a
+<span class="token comment"># 切换分支</span>
+$ <span class="token function">git</span> checkout branchName
+<span class="token comment"># 临时将工作区文件的修改保存至堆栈中</span>
+$ <span class="token function">git</span> stash
+<span class="token comment"># 将之前保存至堆栈中的文件取出来</span>
+$ <span class="token function">git</span> stash pop
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="git-常用命令详解"><a href="#git-常用命令详解" class="header-anchor">#</a> Git 常用命令详解</h2> <h3 id="add"><a href="#add" class="header-anchor">#</a> add</h3> <p>将工作区的文件添加到暂存区</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 添加指定文件到暂存区（追踪新增的指定文件）</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token punctuation">[</span>file1<span class="token punctuation">]</span> <span class="token punctuation">[</span>file2<span class="token punctuation">]</span> <span class="token punctuation">..</span>.
+<span class="token comment"># 添加指定目录到暂存区，包括子目录</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>
+<span class="token comment"># 添加当前目录的所有文件到暂存区（追踪所有新增的文件）</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token comment"># 删除工作区/暂存区的文件</span>
+$ <span class="token function">git</span> <span class="token function">rm</span> <span class="token punctuation">[</span>file1<span class="token punctuation">]</span> <span class="token punctuation">[</span>file2<span class="token punctuation">]</span> <span class="token punctuation">..</span>.
+<span class="token comment"># 停止追踪指定文件，但该文件会保留在工作区</span>
+$ <span class="token function">git</span> <span class="token function">rm</span> --cached <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+<span class="token comment"># 改名工作区/暂存区的文件</span>
+$ <span class="token function">git</span> <span class="token function">mv</span> <span class="token punctuation">[</span>file-original<span class="token punctuation">]</span> <span class="token punctuation">[</span>file-renamed<span class="token punctuation">]</span>
+
+<span class="token comment"># Git 2.0 以下版本</span>
+<span class="token comment">#只作用于文件的新增和修改</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>  
+<span class="token comment">#只作用于文件的修改和删除</span>
+$ gti <span class="token function">add</span> -u
+<span class="token comment">#作用于文件的增删改</span>
+$ <span class="token function">git</span> <span class="token function">add</span> -A
+
+<span class="token comment"># Git 2.0 版本</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span> 等价于 $ <span class="token function">git</span> <span class="token function">add</span> -A
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><strong><code>git add .</code></strong> ：<strong>操作的对象是“当前目录”所有文件变更</strong>，&quot;.&quot;  表示当前目录。会监控工作区的状态树，使用它会把工作区的<strong>所有变化提交</strong>到暂存区，包括文件内容修改（<code>modified</code>）以及新文件（<code>new</code>），但<strong>不包括被删除的文件</strong>。</p> <p><strong><code>git add -u</code></strong> ：<strong>操作的对象是整个工作区已经跟踪的文件变更，无论当前位于哪个目录下</strong>。仅监控<strong>已经被 add 的文件</strong>（即 <strong><code>tracked file</code></strong>），它会将被修改的文件（包括文件删除）提交到暂存区。<code>git add -u</code> 不会提交新文件（<strong><code>untracked file</code></strong>）。（<strong><code>git add --update</code></strong> 的缩写）</p> <p><strong><code>git add -A</code></strong> ：<strong>操作的对象是“整个工作区”所有文件的变更，无论当前位于哪个目录下</strong>。是上面两个功能的合集（<code>git add --all</code> 的缩写）。</p> <h3 id="status"><a href="#status" class="header-anchor">#</a> status</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看工作区和暂存区的状态</span>
+$ <span class="token function">git</span> status
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="commit"><a href="#commit" class="header-anchor">#</a> commit</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 将暂存区的文件提交到本地仓库并添加提交说明</span>
+$ <span class="token function">git</span> commit -m <span class="token string">&quot;本次提交的说明&quot;</span>
+
+<span class="token comment"># add 和 commit 的合并，便捷写法</span>
+<span class="token comment"># 和 git add -u 命令一样，未跟踪的文件是无法提交上去的</span>
+$ <span class="token function">git</span> commit -am <span class="token string">&quot;本次提交的说明&quot;</span>  
+
+<span class="token comment"># 跳过验证继续提交</span>
+$ <span class="token function">git</span> commit --no-verify
+$ <span class="token function">git</span> commit -n
+
+<span class="token comment"># 编辑器会弹出上一次提交的信息，可以在这里修改提交信息</span>
+$ <span class="token function">git</span> commit --amend
+<span class="token comment"># 修复提交，同时修改提交信息</span>
+$ <span class="token function">git</span> commit --amend -m <span class="token string">&quot;本次提交的说明&quot;</span>
+<span class="token comment"># 加入 --no-edit 标记会修复提交但不修改提交信息，编辑器不会弹出上一次提交的信息</span>
+$ <span class="token function">git</span> commit --amend --no-edit
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p><code>git commit --amend</code> 既可以修改上次提交的文件内容，也可以修改上次提交的说明。会用一个新的 <code>commit</code> 更新并替换最近一次提交的 <code>commit</code> 。如果暂存区有内容，这个新的 <code>commit</code> 会把任何修改内容和上一个 <code>commit</code> 的内容结合起来。如果暂存区没有内容，那么这个操作就只会把上次的 <code>commit</code> 消息重写一遍。<strong>永远不要修复一个已经推送到公共仓库中的提交，会拒绝推送到仓库</strong></p> <h3 id="push-pull"><a href="#push-pull" class="header-anchor">#</a> push &amp; pull</h3> <ul><li>分支推送顺序的写法是 <strong>&lt;来源地&gt;:&lt;目的地&gt;</strong></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 将本地仓库的文件推送到远程分支</span>
+<span class="token comment"># 如果远程仓库没有这个分支，会新建一个同名的远程分支</span>
+<span class="token comment"># 如果省略远程分支名，则表示两者同名</span>
+$ <span class="token function">git</span> push <span class="token operator">&lt;</span>远程主机名<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>本地分支名<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>远程分支名<span class="token operator">&gt;</span>
+$ <span class="token function">git</span> push origin branchname  
+
+<span class="token comment"># 如果省略本地分支名，则表示删除指定的远程分支</span>
+<span class="token comment"># 因为这等同于推送一个空的本地分支到远程分支。</span>
+$ <span class="token function">git</span> push origin :master
+<span class="token comment"># 等同于</span>
+$ <span class="token function">git</span> push origin --delete master
+
+<span class="token comment"># 建立当前分支和远程分支的追踪关系</span>
+$ <span class="token function">git</span> push -u origin master
+<span class="token comment"># 如果当前分支与远程分支之间存在追踪关系</span>
+<span class="token comment"># 则可以省略分支和 -u</span>
+$ <span class="token function">git</span> push
+
+<span class="token comment"># 不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机</span>
+$ <span class="token function">git</span> push --all origin
+
+<span class="token comment"># 拉取所有远程分支到本地镜像仓库中</span>
+$ <span class="token function">git</span> pull
+<span class="token comment"># 拉取并合并项目其他人员的一个分支</span>
+$ <span class="token function">git</span> pull origin branchname  
+<span class="token comment"># 等同于 fetch + merge</span>
+$ <span class="token function">git</span> fetch origin branchName
+$ <span class="token function">git</span> merge origin/branchName
+
+<span class="token comment"># 如果远程主机的版本比本地版本更新，推送时 Git 会报错，要求先在本地做 git pull 合并差异，</span>
+<span class="token comment"># 然后再推送到远程主机。这时，如果你一定要推送，可以使用 –-force 选项</span>
+<span class="token comment"># （尽量避免使用）</span>
+$ <span class="token function">git</span> push --force origin <span class="token operator">|</span> <span class="token function">git</span> push -f origin
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h3 id="branch"><a href="#branch" class="header-anchor">#</a> branch</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看本地分支</span>
+$ <span class="token function">git</span> branch <span class="token operator">|</span> <span class="token function">git</span> branch -l
+<span class="token comment"># 查看远程分支</span>
+$ <span class="token function">git</span> branch -r
+<span class="token comment"># 查看所有分支（本地分支+远程分支）</span>
+$ <span class="token function">git</span> branch -a
+<span class="token comment"># 查看所有分支并带上最新的提交信息</span>
+$ <span class="token function">git</span> branch -av
+<span class="token comment"># 查看本地分支对应的远程分支</span>
+$ <span class="token function">git</span> branch -vv
+
+<span class="token comment"># 新建分支</span>
+<span class="token comment"># 在别的分支下新建一个分支，新分支会复制当前分支的内容</span>
+<span class="token comment"># 注意：如果当前分支有修改，但是没有提交到仓库，此时修改的内容是不会被复制到新分支的</span>
+$ <span class="token function">git</span> branch branchname
+<span class="token comment"># 切换分支(切换分支时，本地工作区，仓库都会相应切换到对应分支的内容)</span>
+$ <span class="token function">git</span> checkout branchname
+<span class="token comment"># 创建一个 aaa 分支，并切换到该分支 （新建分支和切换分支的简写）</span>
+$ <span class="token function">git</span> checkout -b aaa
+<span class="token comment"># 可以看做是基于 master 分支创建一个 aaa 分支，并切换到该分支</span>
+$ <span class="token function">git</span> checkout -b aaa master
+
+<span class="token comment"># 新建一条空分支（详情请看问题列表）</span>
+$ <span class="token function">git</span> checkout --orphan emptyBranchName
+$ <span class="token function">git</span> <span class="token function">rm</span> -rf <span class="token builtin class-name">.</span>
+
+<span class="token comment"># 删除本地分支,会阻止删除包含未合并更改的分支</span>
+$ <span class="token function">git</span> brnach -d branchname
+<span class="token comment"># 强制删除一个本地分支，即使包含未合并更改的分支</span>
+$ <span class="token function">git</span> branch -D branchname  
+<span class="token comment"># 删除远程分支</span>
+<span class="token comment"># 推送一个空分支到远程分支，其实就相当于删除远程分支</span>
+$ <span class="token function">git</span> push origin  :远程分支名
+<span class="token comment"># 或者</span>
+$ <span class="token function">git</span> push origin --delete 远程分支名
+
+<span class="token comment"># 修改当前分支名</span>
+$ <span class="token function">git</span> branch -m branchname
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><h3 id="merge-三种常用合并方法"><a href="#merge-三种常用合并方法" class="header-anchor">#</a> merge 三种常用合并方法</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 默认 fast-forward ，HEAD 指针直接指向被合并的分支</span>
+$ <span class="token function">git</span> merge
+
+<span class="token comment"># 禁止快进式合并</span>
+$ <span class="token function">git</span> merge --no-ff
+
+$ <span class="token function">git</span> merge --squash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><img src="/assets/img/172b390eac6f9586.bea8ba6f.jpg" alt="img"></p> <p><code>fast-forward</code>：会在当前分支的提交历史中添加进被合并分支的提交历史（<strong>得先理解什么时候会发生快速合并，并不是每次 merge 都会发生快速合并</strong>）；</p> <p><code>--no-ff</code>：<strong>会生成一个新的提交</strong>，让当前分支的提交历史不会那么乱；</p> <p><code>--squash</code>：<strong>不会生成新的提交</strong>，会将被合并分支多次提交的内容直接存到工作区和暂存区，由开发者手动去提交，这样当前分支最终只会多出一条提交记录，不会掺杂被合并分支的提交历史</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/11/2021, 10:45:07 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9454abc9.js" defer></script><script src="/assets/js/2.62a85667.js" defer></script><script src="/assets/js/9.5830ce87.js" defer></script>
+  </body>
+</html>
